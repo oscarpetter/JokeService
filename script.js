@@ -53,6 +53,6 @@ function addJoke(type) {
         fortunes[i].innerText = fortunes[i - 1].innerText
     }
 
-    /// jokeService async function with get fetch 
+    /// jokeService async function with get fetch
     // fetch api call
 }
