@@ -1,4 +1,4 @@
-The idea is for this webb application to get data(jokes) from an API.
+The idea is for this web application to get data(jokes) from an API.
 There is an option for different categories in the webb page which will get different jokes from the API.
 Max of ten jokes will be saved on the page, if it reaches ten then the oldest fortune gets removed.
 
