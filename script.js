@@ -53,6 +53,29 @@ function addJoke(type) {
         fortunes[i].innerText = fortunes[i - 1].innerText
     }
 
-    /// jokeService async function with get fetch
-    // fetch api call
+    jokeService.get(type)
+        .then(fortune => {
+            fortunes[0].innerText = fortune
+        })
+        .catch(error => {
+            fortunes[0].innerText = error
+        })
+}
+
+const jokeService = {
+    get: async(type) => {
+        let options = {
+            headers: { 'Accept': 'application/json' }
+        }
+
+        let resp = await fetch(`http://input-URL-for-API-fetch-/${type}`, options)
+
+        if (!resp.ok) {
+            throw new Error(resp.status)
+        }
+
+        return fetch(`http://input-URL-for-API-fetch-/${type}`)
+            .then(response => response.json())
+            .then(json => json.fortune)
+    }
 }
